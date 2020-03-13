@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1> Local Storage</h1>
+<p>Using local storage, JSON makes it possible to store JavaScript objects as text.</p>
+<p id="demo"></p>
+
+
+
+<script>
+var myObj, myJSON, text, obj;
+
+// Store the data
+myObj = { make: "Honda", model: "Accord", year: 2007, color: "Red", engine: "V6"};
+myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
+
+// Retrieve the data
+text = localStorage.getItem("testJSON");
+vehicle = JSON.parse(text);
+document.getElementById("demo").innerHTML = 
+"Manufacturer: " + vehicle.make + "<br>Model: " + vehicle.model + "<br>Year: " + vehicle.year + "<br>Engine: " + vehicle.engine + "<br>Color: " + vehicle.color;
+</script>
+
+</body>
+</html>
+
+
+
+
